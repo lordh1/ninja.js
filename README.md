@@ -1,3 +1,10 @@
+# About techdebt/bugs to fix:
+
+- SharedArrayBuffer deprecation warning - needs upgrade to react 17.0.2
+- When upgrade to React 17.0.2 ReactEnzymeAdapter need also to be upgraded. This impacts on other module dependecies.
+- Bug to fix: When click on the row, user is redirected to Google page. When back to the app, then searchfield is filled, but rows are not filtered.
+- In general module dependencies needs to be fixed. There was a missing Gensyns package dependency missing when refacored DataTable index.js from Class to Hook. I don't remember that this dependency was required in other React projects, so looks like probably something related to packages used in this project.
+
 # React Interview
 
 This project contains a simple React application to display a paginated table of users which can be filtered.
