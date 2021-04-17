@@ -1,28 +1,28 @@
-import React from 'react';
-import { mount, shallow } from 'enzyme';
-import Page from '../Page';
+import React from 'react'
+import { mount, shallow } from 'enzyme'
+import Page from '../Page'
 
 const props = {
   pageNumber: 1,
   currentPageNumber: 1,
   onChange: jest.fn(),
-};
+}
 
 it('renders without crashing', () => {
-  shallow(<Page {...props} />);
-});
+  shallow(<Page {...props} />)
+})
 
 it('should call onChange handler when click on component', () => {
   //given
-  const wrapper = mount(<Page {...props} />);
-  const spyOnClick = jest.spyOn(props, 'onChange');
+  const wrapper = mount(<Page {...props} />)
+  const spyOnClick = jest.spyOn(props, 'onChange')
 
   //when
-  wrapper.find('button').simulate('click');
+  wrapper.find('button').simulate('click')
 
   //then
-  expect(spyOnClick).toHaveBeenCalled();
-});
+  expect(spyOnClick).toHaveBeenCalled()
+})
 
 it.each`
   pageNumber | currentPageNumber | pageNumberExpected | activePage
@@ -38,13 +38,13 @@ it.each`
         currentPageNumber={currentPageNumber}
         onChange={props.onChange}
       />
-    );
+    )
 
     //when
-    const button = wrapper.find('button');
+    const button = wrapper.find('button')
 
     //then
-    expect(button.text()).toMatch(pageNumberExpected);
-    expect(button.hasClass('button-outline')).toBe(activePage);
+    expect(button.text()).toMatch(pageNumberExpected)
+    expect(button.hasClass('button-outline')).toBe(activePage)
   }
-);
+)

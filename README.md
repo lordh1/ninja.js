@@ -1,9 +1,17 @@
-# About techdebt/bugs to fix:
+# About techdebt/bugs/things to consider and fix:
 
+- Tests - 100% coverage is reached, but to consider splitting tests into one isolated unit test for each component. It depends of team norms.
 - SharedArrayBuffer deprecation warning - needs upgrade to react 17.0.2
 - When upgrade to React 17.0.2 ReactEnzymeAdapter need also to be upgraded. This impacts on other module dependecies.
 - Bug to fix: When click on the row, user is redirected to Google page. When back to the app, then searchfield is filled, but rows are not filtered.
 - In general module dependencies needs to be fixed. There was a missing Gensyns package dependency missing when refacored DataTable index.js from Class to Hook. I don't remember that this dependency was required in other React projects, so looks like probably something related to packages used in this project.
+- Maybe to use Memo, but it's currently too simple to generate troubles with rerendering issues.
+
+# Other ToDos:
+
+The code is a bit confusing in some places, so to consider if things can be simplified and more human readable.
+But this is my honest opinion.
+The most important it works ;)
 
 # React Interview
 
@@ -22,13 +30,14 @@ When you make a PR, write down changes you did with a small explanation why.
 ## Run the code
 
 To get started:
+
 - clone
 - `yarn install`
 - `yarn start`
 
 To run the tests:
-- `yarn run test`
 
+- `yarn run test`
 
 # How to submit
 
@@ -37,7 +46,6 @@ To run the tests:
 2. Make a PR to your forked repo with your changes (make sure you make PR on your forked repo and not on this one - by default github will choose this repo as destination for PR)
 
 3. If you chose to do public repo, send us link to the PR in your forked repo. If you choose to make private repo, add `davidmilo`, `jacobjuul` and `kristiandupont` as collaborators and send us link to it. (We prefer public repos so it can be send internally to other front-enders fro review.)
-
 
 # Tips
 
@@ -49,6 +57,7 @@ To run the tests:
 ## DO
 
 We like:
+
 - clean code
 - easy to read code
 - easy to change code
